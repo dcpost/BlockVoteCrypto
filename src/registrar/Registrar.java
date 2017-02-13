@@ -23,6 +23,10 @@ public class Registrar implements IRegistrar{
 	public RSAKeyParameters getPublic() {
 		return (RSAKeyParameters) keys.getPublic();
 	}
+	
+	public RSAKeyParameters getPrivate() {
+		return (RSAKeyParameters) keys.getPrivate();
+	}
 
 	public byte[] sign(ITokenRequest tokenRequest) {
 		// Sign the coin request using our private key.

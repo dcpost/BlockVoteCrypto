@@ -40,6 +40,14 @@ public class BlindSignatureExample {
 		System.out.println(Base64.toBase64String(registrar.getPublic().getModulus().toByteArray()));
 		System.out.println("");
 		
+		System.out.println("PRIVATE KEY EXPONENT:");
+		System.out.println("");
+		System.out.println(Base64.toBase64String(registrar.getPrivate().getExponent().toByteArray()));
+		System.out.println("");
+		System.out.println("PRIVATE KEY MODULUS:");
+		System.out.println("");
+		System.out.println(Base64.toBase64String(registrar.getPrivate().getModulus().toByteArray()));
+		System.out.println("");
 		
 		// Create a "blinded token" using the bank's public key. The blinded token
 		// contains an internal blinding factor that is used to blind the

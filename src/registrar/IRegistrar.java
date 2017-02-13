@@ -8,6 +8,8 @@ import tokens.ITokenRequest;
 public interface IRegistrar {
 	// The registrar's RSA public key
 	RSAKeyParameters getPublic();
+	
+	RSAKeyParameters getPrivate();
 
 	// Sign a token request
 	byte[] sign(ITokenRequest tokenRequest);
