@@ -3,7 +3,7 @@ package registrar;
 import java.math.BigInteger;
 
 import org.bouncycastle.crypto.AsymmetricCipherKeyPair;
-import org.bouncycastle.crypto.digests.SHA1Digest;
+import org.bouncycastle.crypto.digests.SHA256Digest;
 import org.bouncycastle.crypto.engines.RSAEngine;
 import org.bouncycastle.crypto.params.RSAKeyParameters;
 import org.bouncycastle.crypto.signers.PSSSigner;
@@ -43,7 +43,7 @@ public class Registrar implements IRegistrar{
 		byte[] id = coin.getID();
 		byte[] signature = coin.getSignature();
 
-		PSSSigner signer = new PSSSigner(new RSAEngine(), new SHA1Digest(), 20);
+		PSSSigner signer = new PSSSigner(new RSAEngine(), new SHA256Digest(), 20);
 		signer.init(false, keys.getPublic());
 
 		signer.update(id, 0, id.length);

@@ -4,7 +4,7 @@ import java.math.BigInteger;
 import java.security.SecureRandom;
 
 import org.bouncycastle.crypto.CryptoException;
-import org.bouncycastle.crypto.digests.SHA1Digest;
+import org.bouncycastle.crypto.digests.SHA256Digest;
 import org.bouncycastle.crypto.engines.RSABlindingEngine;
 import org.bouncycastle.crypto.generators.RSABlindingFactorGenerator;
 import org.bouncycastle.crypto.params.RSABlindingParameters;
@@ -34,7 +34,7 @@ public class BlindedToken {
 		// "Blind" the coin and generate a coin request to be signed by the
 		// bank.
 		PSSSigner signer = new PSSSigner(new RSABlindingEngine(),
-				new SHA1Digest(), 20);
+				new SHA256Digest(), 20);
 		signer.init(true, blindingParams);
 
 		signer.update(tokenID, 0, tokenID.length);
